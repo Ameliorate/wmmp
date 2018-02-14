@@ -1,0 +1,1 @@
+/usr/bin/cc -O0 -g  -rdynamic CMakeFiles/WMmp.dir/src/dockapp.c.o CMakeFiles/WMmp.dir/src/libmpdclient.c.o CMakeFiles/WMmp.dir/src/mouse_regions.c.o CMakeFiles/WMmp.dir/src/mpd_func.c.o CMakeFiles/WMmp.dir/src/wmmp.c.o  -o WMmp -lSM -lICE -lX11 -lXext -lXpm 

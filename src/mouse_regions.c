@@ -72,66 +72,70 @@
 /*****************/
 
 typedef struct {
-    int     enable;
-    int     top;
-    int     bottom;
-    int     left;
-    int     right;
+        int enable;
+        int top;
+        int bottom;
+        int left;
+        int right;
 } MOUSE_REGION;
 
-MOUSE_REGION    mouse_region[MAX_MOUSE_REGION];
+MOUSE_REGION mouse_region[MAX_MOUSE_REGION];
 
 /******************************************************************************\
 |* AddMouseRegion                                                             *|
 \******************************************************************************/
 
-void AddMouseRegion(int index, int left, int top, int right, int bottom) {
+void AddMouseRegion(int index, int left, int top, int right, int bottom)
+{
 
-    if (index < MAX_MOUSE_REGION) {
-        mouse_region[index].enable = 1;
-        mouse_region[index].top = top;
-        mouse_region[index].left = left;
-        mouse_region[index].bottom = bottom;
-        mouse_region[index].right = right;
-    }
+        if (index < MAX_MOUSE_REGION) {
+                mouse_region[index].enable = 1;
+                mouse_region[index].top = top;
+                mouse_region[index].left = left;
+                mouse_region[index].bottom = bottom;
+                mouse_region[index].right = right;
+        }
 }
 
 /******************************************************************************\
 |* CheckMouseRegion                                                           *|
 \******************************************************************************/
 
-int CheckMouseRegion(int x, int y) {
-    int     i;
-    int     found;
+int CheckMouseRegion(int x, int y)
+{
+        int i;
+        int found;
 
-    found = 0;
+        found = 0;
 
-    for (i=0; i<MAX_MOUSE_REGION && !found; i++) {
-        if (mouse_region[i].enable==1 &&
-            x <= mouse_region[i].right &&
-            x >= mouse_region[i].left &&
-            y <= mouse_region[i].bottom &&
-            y >= mouse_region[i].top)
-            found = 1;
-    }
-    if (!found) return -1;
-    return (i-1);
+        for (i = 0; i < MAX_MOUSE_REGION && !found; i++) {
+                if (mouse_region[i].enable == 1 &&
+                    x <= mouse_region[i].right &&
+                    x >= mouse_region[i].left &&
+                    y <= mouse_region[i].bottom && y >= mouse_region[i].top)
+                        found = 1;
+        }
+        if (!found)
+                return -1;
+        return (i - 1);
 }
 
 /******************************************************************************\
 |* EnableMouseRegion                                                          *|
 \******************************************************************************/
 
-void EnableMouseRegion(int i) {
-    if(i<MAX_MOUSE_REGION && mouse_region[i].enable==2)
-        mouse_region[i].enable=1;
+void EnableMouseRegion(int i)
+{
+        if (i < MAX_MOUSE_REGION && mouse_region[i].enable == 2)
+                mouse_region[i].enable = 1;
 }
 
 /******************************************************************************\
 |* DisableMouseRegion                                                         *|
 \******************************************************************************/
 
-void DisableMouseRegion(int i) {
-    if(i<MAX_MOUSE_REGION && mouse_region[i].enable==1)
-        mouse_region[i].enable=2;
+void DisableMouseRegion(int i)
+{
+        if (i < MAX_MOUSE_REGION && mouse_region[i].enable == 1)
+                mouse_region[i].enable = 2;
 }
