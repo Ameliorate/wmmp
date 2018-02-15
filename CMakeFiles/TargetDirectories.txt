@@ -1,7 +1,0 @@
-/home/amelorate/Documents/wmmp/CMakeFiles/install/strip.dir
-/home/amelorate/Documents/wmmp/CMakeFiles/edit_cache.dir
-/home/amelorate/Documents/wmmp/CMakeFiles/WMmp.dir
-/home/amelorate/Documents/wmmp/CMakeFiles/rebuild_cache.dir
-/home/amelorate/Documents/wmmp/CMakeFiles/list_install_components.dir
-/home/amelorate/Documents/wmmp/CMakeFiles/install/local.dir
-/home/amelorate/Documents/wmmp/CMakeFiles/install.dir
